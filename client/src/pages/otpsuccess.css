@@ -1,0 +1,61 @@
+
+
+.success-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle, #000000, #111111);
+}
+
+.success-card {
+ 
+  background-color: #1e1e1e;
+  padding: 70px 60px;
+  border-radius: 25px;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
+  width: 350px;
+  color: white;
+  text-align: center;
+}
+
+.success-logo {
+  width: 60px;
+  height: auto;
+  margin-bottom: 30px;
+}
+
+.checkmark-circle {
+  background: linear-gradient(to right, #00ffff, #00c6ff);
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.check-icon {
+  color: white;
+  font-size: 60px;
+}
+
+.success-text {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.success-subtext {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.login-link {
+  color: #00ffff;
+  text-decoration: none;
+  font-weight: 500;
+}

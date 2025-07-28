@@ -1,0 +1,171 @@
+.df-dashboard {
+     margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0e0e0e;
+  color: white;
+  padding: 20px;
+}
+
+.df-tabs {
+  display: flex;
+  margin-top: 20px;
+}
+
+.df-tabs button {
+  padding: 10px 20px;
+  background: none;
+  border: 2px solid #ccc;
+  margin-right: 10px;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.df-tabs .df-active {
+  background: white;
+  color: black;
+}
+
+.df-stats {
+  display: flex;
+  gap: 20px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.df-stat-card {
+  background: #1e1e1e;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 12px;
+  width: 180px;
+  text-align: center;
+}
+
+.df-charts-section {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.df-revenue-chart,
+.df-assets-card {
+  flex: 1;
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.df-chart-header button {
+  margin-right: 10px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.df-chart-header .df-active {
+  background: white;
+  color: black;
+}
+
+.df-revenue-value {
+  margin: 10px 0;
+}
+
+.df-growth {
+  color: green;
+  font-size: 14px;
+}
+
+.df-bar-chart {
+  display: flex;
+  align-items: flex-end;
+  height: 100px;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.df-bar {
+  text-align: center;
+}
+
+.df-bar-fill {
+  width: 10px;
+  background: royalblue;
+  border-radius: 3px;
+}
+
+.df-bar-label {
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.df-asset-info p,
+.df-purchase-box p {
+  margin: 6px 0;
+}
+
+.df-purchase-box button {
+  margin-top: 8px;
+  padding: 8px 12px;
+  background: white;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.df-performance-allocation {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.df-performance-table {
+  flex: 2;
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.df-performance-table table {
+  width: 100%;
+  border-collapse: collapse;
+  color: white;
+}
+
+.df-performance-table th,
+.df-performance-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #444;
+}
+
+.df-fraction-pie {
+  flex: 1;
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.df-circle {
+  width: 120px;
+  height: 120px;
+  background: deepskyblue;
+  border-radius: 50%;
+  line-height: 120px;
+  font-size: 20px;
+  margin: 0 auto 10px;
+  font-weight: bold;
+}
+
+.df-dot {
+  width: 10px;
+  height: 10px;
+  background: deepskyblue;
+  display: inline-block;
+  border-radius: 50%;
+  margin-right: 6px;
+}

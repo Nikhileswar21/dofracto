@@ -1,0 +1,141 @@
+/* VIDEO TRANSITION */
+.fade-in-video {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+.fade-out-video {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+/* CONTAINER */
+.home-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: black;
+  overflow: hidden;
+}
+
+/* VIDEO STYLING */
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* INTRO */
+.intro-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dofracto-text {
+  font-size: 4rem;
+  color: white;
+  font-weight: bold;
+  transition: opacity 1s ease-in-out;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+/* MAIN SECTION */
+.main-section {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100vh;
+  background: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  animation: fadeIn 1s ease-in-out;
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+/* MAIN TITLE */
+.main-title {
+  font-size: 100px;
+}
+
+.main-section p {
+  font-size: 40px;
+}
+
+.start-btn {
+  background-color: #faf7f7;
+  color: #060505;
+  padding: 40px 80px;
+  font-size: 40px;
+  border-radius: 30px;
+  border: 8px solid rgb(34, 232, 239);
+  cursor: pointer;
+}
+
+/* MAIN FADE OUT */
+.fade-out-main {
+  opacity: 0;
+  transform: scale(0.98);
+  pointer-events: none;
+}
+
+/* SLIDE-UP FEATURES OVERLAY */
+.features-overlay {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(8px);
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: slideUpOverlay 1.2s ease forwards;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUpOverlay {
+  from {
+    top: 100%;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}

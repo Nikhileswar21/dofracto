@@ -1,0 +1,120 @@
+.footer {
+  background-color: #111111ee;
+  color: #eee;
+  padding: 40px 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px 0;
+}
+
+/* === LEFT SECTION === */
+.footer-left {
+  flex: 1;
+  min-width: 150px;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-logo {
+  max-width: 120px;
+  height: auto;
+}
+
+.powered {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #ccc;
+  margin: 0;
+}
+
+.powered-logo {
+  height: 20px;
+  width: auto;
+  object-fit: contain;
+}
+
+.newsletter-text {
+  white-space: nowrap;
+  font-size: larger;
+  color: #eee;
+  margin: 0;
+}
+
+/* === SUBSCRIBE FORM === */
+.footer-subscribe {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  max-width: 300px;
+}
+
+.subscribe-input {
+  padding: 10px 12px;
+  border-radius: 5px 0 0 5px;
+  border: none;
+  outline: none;
+  flex: 1;
+  min-width: 180px;
+}
+
+.subscribe-button {
+  background-color: #181818;
+  border: none;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.subscribe-button:hover {
+  background-color: #e055b1;
+}
+
+/* === TEXT GENERAL === */
+.footer-content p {
+  font-size: larger;
+  margin: 0;
+}
+
+/* === LINK SECTION === */
+.footer-links ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 30px 70px;
+  padding-top: 80px;
+  padding-left: 400px;
+}
+
+.footer-links a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: x-large;
+}
+
+.footer-links a:hover {
+  color: #ff6ec7;
+}
+
+/* === COPYRIGHT (last <p>) === */
+.footer-content > p:last-child {
+  margin-top: 20px;
+  font-size: 13px;
+  color: #888;
+  width: 100%;
+  text-align: center;
+}

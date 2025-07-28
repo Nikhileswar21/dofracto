@@ -1,0 +1,134 @@
+.signup-container {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  background-color: #000;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+
+
+@media (min-width: 1024px) {
+  .left-panel-image {
+    display: block;
+  }
+}
+ 
+
+@media (min-width: 1024px) {
+  .right-panel {
+    width: 50%;
+  }
+}
+
+.form-container {
+  width: 100%;
+  max-width: 36rem;
+}
+
+.welcome-title {
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.input-container {
+  position: relative;
+  flex: 1;
+}
+
+.input-icon {
+  position: absolute;
+  top: 50%;
+  left: 0.75rem;
+  transform: translateY(-50%);
+  color: #888;
+  font-size: 1rem;
+}
+/*
+.form-input {
+  width: 100%;
+  height: 3.25rem;
+  padding: 0 2.5rem;
+  background-color: white;
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  color: #000;
+  box-shadow: 0 0 0 1px #ccc;
+}
+*/
+
+.form-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #3b82f6;
+}
+
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 0.75rem;
+  color: #888;
+  cursor: pointer;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.signup-button {
+  width: 100%;
+  height: 3.25rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(90deg, #00dbde, #fc00ff);
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 219, 222, 0.3);
+}
+
+.signup-footer {
+  text-align: center;
+  color: #ccc;
+  margin-top: 1.25rem;
+}
+
+.login-link {
+  color: #00dbde;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.login-link:hover {
+  color: #fc00ff;
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+  }
+}
