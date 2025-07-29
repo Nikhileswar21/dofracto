@@ -5,6 +5,7 @@
   display: flex;
   background-color: #000;
   font-family: 'Segoe UI', sans-serif;
+  
 }
 
 /* ✅ Left Panel with Background Image */
@@ -42,6 +43,8 @@
 .form-container {
   width: 100%;
   max-width: 28rem;
+ 
+
 }
 
 .welcome-text {
@@ -68,6 +71,8 @@
 
 .input-container {
   position: relative;
+  
+  
 }
 
 .input-icon {
@@ -82,7 +87,7 @@
 /* INPUT FIELD */
 .form-input {
   width: 100%;
-  height: 3.25rem;
+  height:10px;
   padding: 30px;
   background-color: white;
   border: none;
@@ -177,10 +182,7 @@
   }
 }
 
-/* GLOBAL */
-* {
-  box-sizing: border-box;
-}
+
 
 .input-container,
 .login-button {
