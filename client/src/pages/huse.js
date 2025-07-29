@@ -1,20 +1,156 @@
-import React, { useState, useEffect } from "react";
+import React, { useRef ,useState, useEffect } from "react";
 import { FaHandshake, FaCompactDisc, FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { SiSentry, SiOpenai } from "react-icons/si";
 import { GiReceiveMoney } from "react-icons/gi";
 
-import "./huse.css"; // Import your CSS file
+import "./huse.css";
 
 const Huse = () => {
-  const [showSecond, setShowSecond] = useState(false);
+const [showSecond, setShowSecond] = useState(false);
+const [animationStarted, setAnimationStarted] = useState(false);
+const [revealStarted, setRevealStarted] = useState(false);
+const [visibleIndex, setVisibleIndex] = useState(0);
+const sectionRef = useRef(null);
+const scrollRef = useRef(null);
+const dividerRef = useRef(null);
 
-  // Automatic transition between card groups every 6 seconds
-  useEffect(() => {
+
+
+const differentiatorCards = [
+  {
+    icon: <FaHandshake className="huse-diff-icon" />,
+    title: "Real Business Exposure",
+    desc: "Work with live businesses,not just simulation"
+  },
+  {
+    icon: <SiSentry className="huse-diff-icon" />,
+    title: "Affordable Entry",
+    desc: "Start small, grow big--invest in fractional business ownership"
+  },
+  {
+    icon: <FaCompactDisc className="huse-diff-icon" />,
+    title: "Support System",
+    desc: "We've got your back with mentors, resources, and expert guidance"
+  },
+  {
+    icon: <SiOpenai className="huse-diff-icon" />,
+    title: "Learn Anytime Anywhere",
+    desc: "Flexible sessions that fit your schedule"
+  },
+  {
+    icon: <GiReceiveMoney className="huse-diff-icon" />,
+    title: "Earn While You Learn",
+    desc: "Get returns while you build your future"
+  }
+];
+
+const handleStartAnimation = () => {
+  if (!animationStarted) {
+    setAnimationStarted(true);
+    let i = 1;
+    const interval = setInterval(() => {
+      setVisibleIndex(i);
+      if (i >= differentiatorCards.length - 1) {
+        clearInterval(interval);
+      }
+      i++;
+    }, 4000);
+  }
+}
+
+function easeInOutCubic(t) {
+  return t < 0.5
+    ? 4 * t * t * t
+    : 1 - Math.pow(-2 * t + 2, 3) / 2;
+}
+
+useEffect(() => {
     const interval = setInterval(() => {
       setShowSecond((prev) => !prev);
     }, 2000);
     return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        setRevealStarted(true);
+        handleStartAnimation();
+        observer.disconnect(); 
+      }
+    },
+    { threshold: 0.2 }
+  );
+
+  if (sectionRef.current) observer.observe(sectionRef.current);
+  return () => observer.disconnect();
+}, []);
+
+useEffect(() => {
+  const container = scrollRef.current;
+  const divider = dividerRef.current;
+  if (!container || !divider) return;
+
+  const scrollDistance = container.scrollWidth - container.clientWidth;
+  const minWidth = 400;     
+  const maxWidth = 1330;    
+  const duration = 1500;   
+  let startTime;
+
+  function easeInOutCubic(t) {
+    return t < 0.5
+      ? 4 * t * t * t
+      : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  }
+
+  const animateScroll = (direction = "forward") => {
+    startTime = null;
+
+    function animate(time) {
+      if (!startTime) startTime = time;
+      const elapsed = time - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = easeInOutCubic(progress);
+
+      // Scroll logic
+      const scrollVal = direction === "forward"
+        ? scrollDistance * eased
+        : scrollDistance * (1 - eased);
+      container.scrollLeft = scrollVal;
+
+      // Divider grows only during forward
+      if (direction === "forward") {
+        const widthVal = minWidth + (maxWidth - minWidth) * eased;
+        divider.style.width = `${widthVal}px`;
+      }
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      } else {
+        if (direction === "forward") {
+          setTimeout(() => animateScroll("backward"), 50);
+        }
+      }
+    }
+
+    requestAnimationFrame(animate);
+  };
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        animateScroll("forward");
+        observer.disconnect();
+      }
+    },
+    { threshold: 0.3 }
+  );
+
+  observer.observe(container);
+
+  return () => observer.disconnect();
+}, []);
+
 
   return (
     <div className="huse-container">
@@ -94,37 +230,29 @@ const Huse = () => {
       </section>
 
       {/* Section 4 - What makes us different */}
-      <section className="huse-section-dark">
-        <div className="huse-diff-title">What makes us different</div>
-        <div className="huse-divider"></div>
-        <div className="huse-diff-cards-scroll">
-          <div className="huse-diff-card">
-            <FaHandshake className="huse-diff-icon" />
-            <h3>Real Business Exposure</h3>
-            <p>Work with live businesses, not just simulation</p>
+      <section className="huse-section-dark" ref={sectionRef}>
+  <div className="huse-diff-title">What makes us different</div>
+<div className="huse-divider" ref={dividerRef}></div>
+  <div className="huse-diff-cards-scroll-native" style={{ overflowX: 'auto', whiteSpace: 'nowrap' }}>
+    <div className="huse-diff-cards-fixed-container">
+      <div className="huse-diff-cards-scroll" ref={scrollRef}>
+        {differentiatorCards.map((card, idx) => (
+          <div
+            key={idx}
+            className={`huse-diff-card ${animationStarted ? "card-fade-in" : "card-hidden"}`}
+            style={animationStarted ? { animationDelay: `${Math.min(idx * 0.15, 0.3)}s` } : {}}
+          >
+            {card.icon}
+            <h3>{card.title}</h3>
+            <p>{card.desc}</p>
           </div>
-          <div className="huse-diff-card">
-            <SiSentry className="huse-diff-icon" />
-            <h3>Affordable Entry</h3>
-            <p>Start small, grow big — invest in fractional business ownership</p>
-          </div>
-          <div className="huse-diff-card">
-            <FaCompactDisc className="huse-diff-icon" />
-            <h3>Support System</h3>
-            <p>We've got your back with mentors, resources, and expert guidance</p>
-          </div>
-          <div className="huse-diff-card">
-            <SiOpenai className="huse-diff-icon" />
-            <h3>Learn Anytime Anywhere</h3>
-            <p>Flexible sessions that fit your schedule</p>
-          </div>
-          <div className="huse-diff-card">
-            <GiReceiveMoney className="huse-diff-icon" />
-            <h3>Earn While You Learn</h3>
-            <p>Get returns while you build your future</p>
-          </div>
-        </div>
-      </section>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
       {/* Section 5 - Final CTA */}
       <section className="huse-section-final">
