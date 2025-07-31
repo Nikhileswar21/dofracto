@@ -20,7 +20,7 @@ export default function FeaturesPage1() {
         At Dofracto, you can explore and invest in businesses across various
         industries, tailored to your interests. Track your investment performance
         with real-time insights, all while connecting with a community of entrepreneurs
-        and investors.
+        and investors. 
       </p>
 
       {showCards && (
