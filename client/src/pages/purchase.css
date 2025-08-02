@@ -1,0 +1,157 @@
+/* Global Styles */
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #191a1f;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Main Container */
+.purchase-bg {
+  background: #191a1f;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Header and Back */
+.purchase-header {
+  width: 100vw;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  padding-left: 44px;
+  padding-top: 38px;
+  margin-bottom: 42px;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2.3rem;
+  cursor: pointer;
+  margin-right: 17px;
+}
+
+.purchase-title {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+/* Form Layout */
+.purchase-form {
+  width: 100vw;
+  max-width: 1200px;
+  display: flex;
+  gap: 32px;
+  margin: 0 auto 38px auto;
+  padding-left: 44px;
+  align-items: flex-start;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 340px;
+}
+
+/* Inputs and Select */
+.input-label {
+  font-size: 1.04rem;
+  margin-bottom: 10px;
+  color: #b0b2b8;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+.input-select {
+  border-radius: 16px;
+  border: 2.4px solid #4e5057;
+  background: #222328;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding: 22px 18px 20px 18px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input-select:focus {
+  border-color: #00b0fc;
+}
+
+.input-select::placeholder {
+  color: #fff;
+  opacity: 1;
+  font-weight: bold;
+  font-size: 1.23rem;
+}
+
+/* Message Box */
+.message-section {
+  width: 100vw;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 44px;
+}
+
+.message-box {
+  width: 100%;
+  height: 80px;
+  border-radius: 16px;
+  border: 2.4px solid #4e5057;
+  background: #222328;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding: 28px 18px;
+  outline: none;
+  resize: none;
+  box-sizing: border-box;
+}
+
+.message-box::placeholder {
+  color: #fff;
+  opacity: 1;
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .purchase-form,
+  .message-section,
+  .purchase-header {
+    padding-left: 8vw;
+    max-width: 98vw;
+  }
+
+  .input-group {
+    min-width: 120px;
+  }
+}
+
+@media (max-width: 700px) {
+  .purchase-header {
+    padding-left: 9px;
+  }
+
+  .purchase-form,
+  .message-section {
+    flex-direction: column;
+    gap: 16px;
+    padding-left: 9px;
+  }
+}
