@@ -16,7 +16,7 @@ import OtpVerification from './pages/otpverification';
 import OtpSuccess from './pages/otpsuccess';
 import Dashboard from './pages/dashboard';
 import BusinessListing from './pages/businesslisting';
- 
+
 
 
 // 👇 Wrapper to handle layout conditionally
@@ -42,7 +42,7 @@ const App = () => {
         <Route path="/otpsuccess" element={<OtpSuccess />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/businesslisting" element={<BusinessListing />} />
-       
+        
         
         <Route path="*" element={<h1>404 Not Found</h1>} />
       </Routes>
