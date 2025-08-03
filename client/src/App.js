@@ -19,7 +19,7 @@ import BusinessListing from './pages/businesslisting';
 
 
 // 👇 Wrapper to handle layout conditionally
-const AppWrapper = () => {
+const App = () => {
   const location = useLocation();
 
   const noNavRoutes = ['/login', '/signup', '/otpverification', '/otpsuccess'];
