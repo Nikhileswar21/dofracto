@@ -26,12 +26,6 @@ body {
   margin-left: 60px;
 }
 
-.nav-line-one .nav-btn:first-child {
-  font-size: 16px;
-  padding: 12px 28px;
-  font-weight: bold;
-}
-
 .nav-line-two {
   display: flex;
   justify-content: space-between;
@@ -49,6 +43,7 @@ body {
 .monitoring-buttons {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .nav-btn {
@@ -99,7 +94,6 @@ body {
   border: 1px solid #fff;
   border-radius: 12px;
   padding: 16px 20px;
-  color: white;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
   text-align: left;
 }
@@ -143,28 +137,6 @@ body {
   border: 1px solid #fff;
   border-radius: 12px;
   padding: 20px;
-  color: white;
-}
-
-.tracker h4 {
-  margin-bottom: 20px;
-}
-
-.tracker p {
-  height: 240px;
-  background: repeating-linear-gradient(
-    45deg,
-    #333,
-    #333 1px,
-    #1e1e1e 1px,
-    #1e1e1e 20px
-  );
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #555;
-  border-radius: 8px;
-  font-size: 14px;
 }
 
 .realtime-box {
@@ -174,7 +146,6 @@ body {
   border: 1px solid #fff;
   border-radius: 12px;
   padding: 20px;
-  color: white;
   height: 470px;
   margin-top: -155px;
 }
@@ -211,6 +182,21 @@ body {
   color: #ccc;
 }
 
+/* ITEM DROPDOWN */
+
+.sample-dropdown {
+  color: #000;
+  background-color: #000000;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 6px;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+}
+
+/* RESPONSIVE */
+
 @media (max-width: 768px) {
   .stats-row,
   .content,
@@ -221,10 +207,6 @@ body {
 
   .nav-line-two {
     align-items: flex-start;
-  }
-
-  .monitoring-buttons {
-    flex-wrap: wrap;
   }
 
   .card,
