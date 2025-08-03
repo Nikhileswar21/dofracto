@@ -8,13 +8,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SmithC05/dofracto.git"
+    "url": "git+https://github.com/TeamInnovatz/dofracto.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/SmithC05/dofracto/issues"
+    "url": "https://github.com/TeamInnovatz/dofracto/issues"
   },
-  "homepage": "https://github.com/SmithC05/dofracto#readme"
+  "homepage": "https://github.com/TeamInnovatz/dofracto#readme",
+  "dependencies": {
+    "gh-pages": "^6.3.0"
+  }
 }
