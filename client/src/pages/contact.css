@@ -195,3 +195,42 @@ html {
   object-fit: cover; /* maintains aspect ratio inside box */
   border-radius: 12px;
 }
+
+
+@media (max-width: 425px) {
+  .contact-box {
+    padding: 20px 15px;
+    border-radius: 20px;
+  }
+
+  .content-wrapper {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .cube-image {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .contact-form {
+    transform: none;
+    width: 100%;
+    max-width: 340px;
+    padding: 20px;
+    border-width: 2.5px;
+  }
+
+  .name-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .subheading,
+  .heading {
+    text-align: center;
+  }
+}
