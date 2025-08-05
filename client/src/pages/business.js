@@ -4,7 +4,7 @@ import kadalaiImage from '../assets/kadalai1.png';
 import kadalaiImage2 from '../assets/kadalai2.png';
 import kadalaiImage3 from '../assets/kadalai3.png';
 import kadalaiImage4 from '../assets/kadalai4.png';
-import img from "../assets/logo.png";
+import img from "../assets/logo2.png";
 
 export default function BusinessListing() {
   return (
