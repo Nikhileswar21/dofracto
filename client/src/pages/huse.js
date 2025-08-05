@@ -177,15 +177,15 @@ useEffect(() => {
         <section className="transition-section">
           {/* First Card Group */}
           <div className={`slide-section ${showSecond ? "hide" : "show"}`}>
-            <div className="cards-row">
-              <div className="card">
+            <div className="huse-cards-row">
+              <div className="huse-cards">
                 <div className="card-icon"></div>
                 <div className="card-title">Community Vibes</div>
                 <div className="card-desc">
                   Connect, collaborate, and grow with like-minded hustlers through a vibrant community of driven entrepreneurs.
                 </div>
               </div>
-              <div className="card">
+              <div className="huse-cards">
                 <div className="card-icon"></div>
                 <div className="card-title">Passive Income</div>
                 <div className="card-desc">
@@ -197,15 +197,15 @@ useEffect(() => {
 
           {/* Second Card Group */}
           <div className={`slide-section ${showSecond ? "show" : "hide"}`}>
-            <div className="cards-row">
-              <div className="card">
+            <div className="huse-cards-row">
+              <div className="huse-cards">
                 <div className="card-icon"></div>
                 <div className="card-title">Live &amp; Recorded Sessions</div>
                 <div className="card-desc">
                   Gain business hacks and expert insights through live and recorded sessions to continuously learn, improve, and grow your entrepreneurial skills effectively.
                 </div>
               </div>
-              <div className="card">
+              <div className="huse-cards">
                 <div className="card-icon"></div>
                 <div className="card-title">Real Time Analytics</div>
                 <div className="card-desc">
