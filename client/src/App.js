@@ -42,8 +42,7 @@ const App = () => {
         <Route path="/otpsuccess" element={<OtpSuccess />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/businesslisting" element={<BusinessListing />} />
-        
-        
+      
         <Route path="*" element={<h1>404 Not Found</h1>} />
       </Routes>
 
