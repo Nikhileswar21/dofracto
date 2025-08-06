@@ -1,16 +1,10 @@
-body {
-  margin: 0;
-  background-color: #000;
-  color: white;
-  font-family: 'Segoe UI', sans-serif;
-}
+
 
 .dashboard {
   padding: 20px;
   background-color: #000;
 }
-
-/* NAV SECTION */
+ 
 
 .nav {
   margin-top: 20px;
@@ -73,12 +67,12 @@ body {
   padding: 10px 18px;
   border-radius: 8px;
   background: #333;
-  color: white;
+  color: #fff;
   border: 1px solid #fff;
   cursor: pointer;
 }
 
-/* STATS CARDS */
+
 
 .stats-row {
   display: flex;
@@ -88,7 +82,7 @@ body {
   flex-wrap: wrap;
 }
 
-.card {
+.controlcard {
   width: 220px;
   background-color: #121212;
   border: 1px solid #fff;
@@ -96,20 +90,21 @@ body {
   padding: 16px 20px;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
   text-align: left;
+  color: #fff;
 }
 
-.card h4 {
+.controlcard h4 {
   font-size: 14px;
   margin-bottom: 6px;
 }
 
-.card p {
+.controlcard p {
   font-size: 20px;
   margin: 4px 0;
   font-weight: bold;
 }
 
-.card span {
+.controlcard span {
   font-size: 12px;
 }
 
@@ -121,7 +116,7 @@ body {
   color: #ff4c4c;
 }
 
-/* CHART + MONITORING BOXES */
+
 
 .content {
   display: flex;
@@ -137,6 +132,26 @@ body {
   border: 1px solid #fff;
   border-radius: 12px;
   padding: 20px;
+  color: #fff;
+}
+
+.tracker select {
+  background-color: #111;
+  color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.tracker .sample-dropdown,
+.tracker .dropdown-btn {
+  background-color: #111;
+  color: #ffffff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 14px;
 }
 
 .realtime-box {
@@ -148,14 +163,15 @@ body {
   padding: 20px;
   height: 470px;
   margin-top: -155px;
+  color: #fff;
 }
 
-.realtime-box h4 {
-  font-size: 18px;
-  margin-bottom: 15px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.realtime-box h4,
+.realtime-box label,
+.realtime-box p,
+.realtime-box .steps h5,
+.realtime-box .steps ol {
+  color: #fff;
 }
 
 .realtime-input {
@@ -182,11 +198,11 @@ body {
   color: #ccc;
 }
 
-/* ITEM DROPDOWN */
+
 
 .sample-dropdown {
-  color: #000;
-  background-color: #000000;
+  color: #fff;
+  background-color: #000;
   font-weight: bold;
   font-size: 14px;
   padding: 6px;
@@ -195,7 +211,7 @@ body {
   outline: none;
 }
 
-/* RESPONSIVE */
+
 
 @media (max-width: 768px) {
   .stats-row,
@@ -209,9 +225,135 @@ body {
     align-items: flex-start;
   }
 
-  .card,
+  .controlcard,
   .tracker,
   .realtime-box {
     width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-line-one {
+    flex-direction: column;
+    margin-left: 20px;
+  }
+
+  .nav-line-two {
+    margin: 0 20px 30px 20px;
+  }
+
+  .stats-row,
+  .content {
+    margin: 0 20px;
+  }
+
+  .realtime-input {
+    width: 100%;
+  }
+
+  .nav-btn,
+  .dropdown-btn {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .sample-dropdown {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .controlcard {
+    width: 100%;
+    padding: 14px;
+  }
+}
+
+
+.tracker select {
+  background-color: #111;
+  color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.tracker select:focus,
+.tracker select:active,
+.tracker select option:checked {
+  color: white !important;
+  background-color: #111;
+}
+
+.tracker option {
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+}
+
+
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 12px;
+  }
+
+  .nav-line-one,
+  .nav-line-two,
+  .stats-row,
+  .content {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    margin: 0 10px;
+  }
+
+  .nav-btn,
+  .dropdown-btn,
+  .sample-dropdown,
+  .tracker select,
+  .realtime-input {
+    width: 100%;
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  .nav-label,
+  .tracker label {
+    font-size: 16px;
+  }
+
+  .controlcard,
+  .tracker,
+  .realtime-box {
+    width: 100% !important;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 14px;
+  }
+
+  .tracker,
+  .realtime-box {
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  .steps h5 {
+    font-size: 13px;
+  }
+
+  .steps ol {
+    font-size: 12px;
+  }
+
+  .controlcard h4 {
+    font-size: 13px;
+  }
+
+  .controlcard p {
+    font-size: 18px;
   }
 }
